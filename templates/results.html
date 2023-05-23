@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPS Distance Calculator - Result</title>
+</head>
+<body>
+    <h1>GPS Distance Calculator - Result</h1>
+
+    {% if distances %}
+    <h2>Distances:</h2>
+    <ul>
+        {% for item in distances %}
+        <li>Distance to ({{ item[0][0] }}, {{ item[0][1] }}): {{ item[1] }} km</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
