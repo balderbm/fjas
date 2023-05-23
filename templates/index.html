@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPS Distance Calculator</title>
+</head>
+<body>
+    <h1>GPS Distance Calculator</h1>
+    <form method="POST" action="/">
+        <label for="my_lat">Your Latitude:</label>
+        <input type="text" name="my_lat" id="my_lat" required><br><br>
+
+        <label for="my_lon">Your Longitude:</label>
+        <input type="text" name="my_lon" id="my_lon" required><br><br>
+
+        <label for="coordinates">List of Coordinates:</label>
+        <textarea name="coordinates" id="coordinates" rows="5" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if distances %}
+    <h2>Distances:</h2>
+    <ul>
+        {% for item in distances %}
+        <li>Distance to ({{ item[0][0] }}, {{ item[0][1] }}): {{ item[1] }} km</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
